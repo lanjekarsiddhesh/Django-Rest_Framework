@@ -4,10 +4,10 @@ import json
 URL = 'http://127.0.0.1:8000/api/Store'
 
 data = {
-    'id':7,
+    'id':10,
     'first_name' : 'saloni',
     'last_name' : 'jagtap',
-    'Roll_number' : 107
+    'Roll_number' : 110
 }
 
 json_data = json.dumps(data)
