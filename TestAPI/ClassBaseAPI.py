@@ -12,7 +12,7 @@ def Fetch_data(id = None):
     print(r.json())
 
 
-Fetch_data('1')
+# Fetch_data('1')
     
 def post_data():
     data = {
@@ -31,17 +31,16 @@ def post_data():
     
 def update_data():
     data = {
-    "id": 10,
-    "first_name": "ABC",
-    "last_name": "XYZ",
-    }
+    "id":12,
+    "first_name" : "abcd@"
+}
 
     json_data = json.dumps(data)
     r = requests.put(url=uri, data=json_data)
     data2 = r.json()
     print(data2)
 
-# update_data()
+update_data()
     
 def delete_data():
     data = {'id':10}

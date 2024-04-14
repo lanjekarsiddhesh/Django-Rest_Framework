@@ -62,6 +62,7 @@ class StudentAPI(View):
         data = JSONParser().parse(stream)
         id = data.get('id')
         Student_Model = Student.objects.get(id=id)
+        # data = {'first_name': data.get('first_name'), 'last_name': data.get('last_name'), 'Roll_number': data.get('Roll_number')}
         serializer = StudentSerializer(Student_Model,data=data, partial=True)
 
         if serializer.is_valid():
@@ -71,7 +72,7 @@ class StudentAPI(View):
             return JsonResponse(serializer.data, status=201)
 
         json_res = JSONRenderer().render(serializer.errors)
-        return JsonResponse(json_res, status=400)
+        return HttpResponse(json_res, content_type='application/json')
     
     def delete(self,request,*args,**kwargs):
         '''
